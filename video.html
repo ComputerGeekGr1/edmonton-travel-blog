@@ -26,11 +26,7 @@
             <section class="main">
                 <div class="card" id="featured-video">
                     <h2>Edmonton Travel Video</h2>
-                    <p class="notice">
-                        Replace <strong>VIDEO_ID_HERE</strong> with a real YouTube video ID.
-                        Then provide attribution to the creator (Standard YouTube License).
-                        We haven't covered &lt;iframe&gt; in class yet but this is good practice.
-                    </p>
+
                     <div class="video-wrap">
                         <!-- TODO (HTML #8):
 Add a YouTube video using an <iframe> embed. Take the video ID from a
@@ -44,12 +40,20 @@ adding a working link to the video or creator’s channel; if the video
 cannot be embedded (it may say playback is disabled on other websites),
 choose a different YouTube video that allows embedding.
 -->
+
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/IJNR2EpS0jw?si=mIkBxAWyBH6cnSfC"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
                     </div>
+
                     <p class="meta">
                         Video under Standard YouTube License.
-                        Attribution: <strong>Creator Name Here</strong> (YouTube).
-                        Link: <a href="#" target="_blank" rel="noopener">Creator Channel or
-                            Video URL</a>
+                        Attribution: <strong>Dumb Ways to Die</strong> (YouTube).
+                        Profile: <a href="https://www.youtube.com/@DumbWays2Die" target="_blank"
+                            rel="noopener">Here</a>
                     </p>
                     <!-- TODO (HTML #9):
                         1)Replace Creator Name Here with the creator’s name.
@@ -62,7 +66,7 @@ choose a different YouTube video that allows embedding.
                     <h3>How to find a Video ID</h3>
                     <p>
                         In a YouTube URL, the ID is usually after <strong>v=</strong>.
-                        Example: https://www.youtube.com/watch?v=<strong>VIDEO_ID</strong>
+                        Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ
                     </p>
                 </div>
             </aside>
