@@ -38,6 +38,23 @@ Typical values:
     --border: #FF69B4;
     /* light border color */
     --shadow: #f2BDCD;
+
+    --purpleshadow: plum;
+    --darkshadow:blueviolet;
+    --selected:palevioletred;
+}
+
+.theme-dark {
+    --bg: #0f172a;
+    --text: #e5e7eb;
+    --primary: #9457EB;
+    --accent: blueviolet;
+    --white: #111827;
+    --border: blueviolet;
+    --shadow: #5F1735;
+    --purpleshadow: blueviolet;
+    --darkshadow:#0f172a;
+    --selected:#CEB2F6;
 }
 
 /* Base styles (inheritance applies to many text properties)
@@ -119,9 +136,8 @@ Optional additions:
     text-decoration: underline wavy;
     padding: 8px;
     border-radius: 999px;
-    background-color: #FF69B4;
-    box-shadow: 2px 2px 2px 2px blueviolet;
-    text-shadow: 0 0 10px blueviolet;  
+    background-color: var(--accent);
+    box-shadow: 2px 2px 2px 2px var(--darkshadow);
 }
 
 /* TODO (CSS #2): Hover effect
@@ -133,11 +149,11 @@ You should define what changes when the mouse hovers:
 */
 .site-nav a:hover {
     /* add properties here */
-    background-color: #FF69B4;
-    color: blueviolet;
-    box-shadow: 2px 2px 2px 2px blueviolet;
+    background-color: var(--accent);
+    color: var(--white);
+    box-shadow: 2px 2px 2px 2px var(--darkshadow);
     text-decoration: underline solid;
-    transform:translateY(2px)
+    transform: translateY(2px)
 }
 
 /* TODO (CSS #3): Active link highlight
@@ -152,7 +168,7 @@ Keep it visually consistent with your hover style.
 */
 .site-nav a.active {
     /* add properties here */
-    background-color: palevioletred;
+    background-color: var(--selected);
     font-weight: bold;
 }
 
@@ -211,7 +227,6 @@ Optional:
     border-radius: 12px;
     padding: 10px;
     margin-bottom: 12px;
-    background-color: 10px 10px #fff0f0;
     box-shadow: 5px 5px 5px 5px var(--shadow);
     border: 1px solid var(--border);
     background: var(--white)
@@ -224,14 +239,14 @@ Optional:
     transform: translateY(-2px);
 }
 
-/* Sidebar-only card styles */ 
+/* Sidebar-only card styles */
 .sidebar .card {
-    box-shadow: 5px 5px 5px 5px plum;
+    box-shadow: 5px 5px 5px 5px var(--purpleshadow);
 }
 
 .sidebar .card:hover {
     background: var(--white);
-    box-shadow: 7px 7px 7px 7px plum;
+    box-shadow: 7px 7px 7px 7px var(--purpleshadow);
     border: 1px dashed var(--border);
     transform: translateY(-2px);
 }
@@ -247,7 +262,7 @@ Typical properties:
 .meta {
     /* add properties here */
     font-size: 0.85rem;
-    color: plum;
+    color: var(--purpleshadow);
     margin-bottom: 6px;
 }
 
@@ -275,7 +290,7 @@ Optional:
     border: 1px solid orange;
     border-radius: 999px;
     background: var(--shadow);
-    background-color: #FF69B4;
+    background-color: var(--accent);
     color: var(--white);
     box-shadow: 2px 2px 2px 2px orange;
 }
@@ -318,9 +333,9 @@ Goal: Use this to emphasize the featured section
 - a subtle background tint
 - a stronger border-left accent
 */
-    border: plum;
+    border: var(--purpleshadow);
     border-style: dashed;
-    box-shadow: 4px 4px 4px 4px plum;
+    box-shadow: 4px 4px 4px 4px var(--purpleshadow);
 
 }
 
@@ -336,23 +351,24 @@ Optional:
 - slightly muted text color
     muted is boring
 */
+/* Hardcoded colours because I liked them in both themes
+*/
 .notice {
     /* add properties here */
     padding: 10px;
     border-radius: 10px;
     background-color: var(--border);
     border-color: blueviolet;
-    box-shadow: 0 0 20px 5px blueviolet; 
+    box-shadow: 0 0 20px 5px blueviolet;
     color: var(--white);
     text-align: center;
-    text-shadow: 0 0 10px blueviolet;  
+    text-shadow: 0 0 10px blueviolet;
 }
 
 .notice:hover {
-    background-color: violet !important;
     box-shadow: 0 0 40px 5px blueviolet;
     border: 2px solid blueviolet;
-    text-shadow: 0 0 10px blueviolet;           
+    text-shadow: 0 0 10px blueviolet;
 }
 
 /* Footer
