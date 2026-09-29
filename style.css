@@ -25,23 +25,23 @@ Typical values:
 - one accent color used for highlights/hover
 --------------------------- */
 :root {
-    --bg: #f4f4f9;
+    --bg: #fff0f0;
     /* background color (light) */
     --text: #222;
     /* main text color (dark) */
-    --primary: #2c3e50;
+    --primary: #FFB7C5;
     /* header/nav background color */
-    --accent: #0A6C74;
+    --accent: #FF69B4;
     /* highlight/hover color */
     --white: #ffffff;
     /* white */
-    --border: #ddd;
+    --border: #FF69B4;
     /* light border color */
+    --shadow: #f2BDCD;
 }
 
 /* Base styles (inheritance applies to many text properties)
 You can adjust:
-Page 8 of 15
 - font-family (Arial, Helvetica, sans-serif)
 - line-height (e.g., 1.4 to 1.8)
 - background and color using variables */
@@ -100,8 +100,7 @@ Typical values:
 
 /* TODO (CSS #1): Nav links as buttons
 Target: .site-nav a (the clickable element)
-Typical values:
-- display: inline-block so padding/background behave like a “button”.
+Typical values:block so padding/background behave like a “button”.
 Page 9 of 15
 You should define more properties to make links look like buttons:
 - text color: usually var(--white)
@@ -116,6 +115,13 @@ Optional additions:
 .site-nav a {
     display: inline-block;
     /* add more properties here */
+    color: var(--white);
+    text-decoration: underline wavy;
+    padding: 8px;
+    border-radius: 999px;
+    background-color: #FF69B4;
+    box-shadow: 2px 2px 2px 2px blueviolet;
+    text-shadow: 0 0 10px blueviolet;  
 }
 
 /* TODO (CSS #2): Hover effect
@@ -127,6 +133,11 @@ You should define what changes when the mouse hovers:
 */
 .site-nav a:hover {
     /* add properties here */
+    background-color: #FF69B4;
+    color: blueviolet;
+    box-shadow: 2px 2px 2px 2px blueviolet;
+    text-decoration: underline solid;
+    transform:translateY(2px)
 }
 
 /* TODO (CSS #3): Active link highlight
@@ -141,6 +152,8 @@ Keep it visually consistent with your hover style.
 */
 .site-nav a.active {
     /* add properties here */
+    background-color: palevioletred;
+    font-weight: bold;
 }
 
 /* Two-column layout (Flexbox)
@@ -155,6 +168,7 @@ Typical values:
 
 .main {
     flex: 2;
+
 }
 
 .sidebar {
@@ -174,6 +188,10 @@ Optional:
 */
 .sidebar {
     /* add properties here */
+    background: var(--primary);
+    border-radius: 12px;
+    padding: 12px;
+    border: 2px solid var(--border)
 }
 
 /* TODO (CSS #5): Card styling (Box Model)
@@ -190,6 +208,32 @@ Optional:
 */
 .card {
     /* add properties here */
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 12px;
+    background-color: 10px 10px #fff0f0;
+    box-shadow: 5px 5px 5px 5px var(--shadow);
+    border: 1px solid var(--border);
+    background: var(--white)
+}
+
+.card:hover {
+    background: var(--white);
+    box-shadow: 8px 8px 8px 4px var(--shadow);
+    border: 1px dashed var(--border);
+    transform: translateY(-2px);
+}
+
+/* Sidebar-only card styles */ 
+.sidebar .card {
+    box-shadow: 5px 5px 5px 5px plum;
+}
+
+.sidebar .card:hover {
+    background: var(--white);
+    box-shadow: 7px 7px 7px 7px plum;
+    border: 1px dashed var(--border);
+    transform: translateY(-2px);
 }
 
 /* TODO (CSS #6): Meta line
@@ -202,6 +246,9 @@ Typical properties:
 */
 .meta {
     /* add properties here */
+    font-size: 0.85rem;
+    color: plum;
+    margin-bottom: 6px;
 }
 
 /* TODO (CSS #7): Tag “pill” styling
@@ -221,6 +268,16 @@ Optional:
 .tag {
     display: inline-block;
     /* add more properties here */
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid orange;
+    border-radius: 999px;
+    background: var(--shadow);
+    background-color: #FF69B4;
+    color: var(--white);
+    box-shadow: 2px 2px 2px 2px orange;
 }
 
 /* TODO (CSS #8): Video container
@@ -234,6 +291,10 @@ Typical properties:
 */
 .video-wrap {
     /* add properties here */
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
 }
 
 .video-wrap iframe {
@@ -257,6 +318,10 @@ Goal: Use this to emphasize the featured section
 - a subtle background tint
 - a stronger border-left accent
 */
+    border: plum;
+    border-style: dashed;
+    box-shadow: 4px 4px 4px 4px plum;
+
 }
 
 /* TODO (CSS #10): Notice styling
@@ -269,9 +334,25 @@ Typical properties:
 Optional:
 - background: white or a very light tint
 - slightly muted text color
+    muted is boring
 */
 .notice {
     /* add properties here */
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--border);
+    border-color: blueviolet;
+    box-shadow: 0 0 20px 5px blueviolet; 
+    color: var(--white);
+    text-align: center;
+    text-shadow: 0 0 10px blueviolet;  
+}
+
+.notice:hover {
+    background-color: violet !important;
+    box-shadow: 0 0 40px 5px blueviolet;
+    border: 2px solid blueviolet;
+    text-shadow: 0 0 10px blueviolet;           
 }
 
 /* Footer
