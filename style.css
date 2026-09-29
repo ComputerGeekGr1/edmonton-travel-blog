@@ -57,6 +57,9 @@ Typical values:
     --selected:#CEB2F6;
 }
 
+/* this changes the color of links, changed to only target mailto links*/
+a[href^="mailto:"] { color: blueviolet }
+
 /* Base styles (inheritance applies to many text properties)
 You can adjust:
 - font-family (Arial, Helvetica, sans-serif)
